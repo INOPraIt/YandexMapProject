@@ -10,6 +10,8 @@ const path = require('path');
 const PORT = process.env.PORT || 5000;
 const app = express();
 
+app.get("/", (req, res) => res.send("Express on Vercel"));
+
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.json());
 app.use(cookieParser());
